@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxel Missile Command</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <div id="missile-hud" class="hidden">
+        <div id="missile-hud-left">
+            <div id="missile-hud-score">0</div>
+            <div id="missile-hud-highscore">HI: 0</div>
+            <div id="missile-hud-wave">WAVE 1</div>
+            <div id="missile-hud-powerup" class="hidden"></div>
+        </div>
+        <div id="missile-hud-right">
+            <div id="missile-hud-cities"></div>
+            <div id="missile-hud-ammo"></div>
+        </div>
+    </div>
+
+    <div id="crosshair">
+        <div class="crosshair-h"></div>
+        <div class="crosshair-v"></div>
+    </div>
+
+    <div id="ui-overlay">
+        <div id="menu-screen">
+            <div class="panel missile-menu-panel">
+                <h1 class="missile-title">MISSILE COMMAND</h1>
+                <p class="missile-subtitle">VOXEL EDITION</p>
+                <div id="highscore-table-menu" class="highscore-table"></div>
+                <button id="start-btn" class="btn btn-primary missile-start-btn">CLICK TO START</button>
+            </div>
+        </div>
+        <div id="game-over-screen" class="hidden">
+            <div class="panel missile-menu-panel">
+                <h1 class="missile-gameover-title">GAME OVER</h1>
+                <div id="final-score" class="missile-final-score"></div>
+                <div id="new-highscore" class="missile-new-highscore hidden">NEW HIGH SCORE!</div>
+                <div id="initials-entry" class="hidden">
+                    <div class="initials-prompt">ENTER YOUR INITIALS</div>
+                    <div class="initials-input-row">
+                        <input type="text" id="initial-0" class="initial-char" maxlength="1" autocomplete="off" />
+                        <input type="text" id="initial-1" class="initial-char" maxlength="1" autocomplete="off" />
+                        <input type="text" id="initial-2" class="initial-char" maxlength="1" autocomplete="off" />
+                    </div>
+                    <button id="submit-initials-btn" class="btn btn-primary missile-start-btn">OK</button>
+                </div>
+                <div id="highscore-table-gameover" class="highscore-table"></div>
+                <button id="restart-btn" class="btn btn-primary missile-start-btn">PLAY AGAIN</button>
+            </div>
+        </div>
+        <div id="pause-screen" class="hidden">
+            <div class="panel missile-menu-panel">
+                <h1 class="missile-title">PAUSED</h1>
+                <button id="resume-btn" class="btn btn-primary missile-start-btn">RESUME</button>
+                <button id="quit-btn" class="btn missile-start-btn">QUIT TO MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script type="module" src="js/missile-app.js?v=2"></script>
+</body>
+</html>

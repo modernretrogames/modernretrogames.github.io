@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxel Space Invaders</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="game-canvas"></canvas>
+    </div>
+
+    <div id="aliens-hud" class="hidden">
+        <div id="hud-score">0</div>
+        <div id="hud-highscore">HI: 0</div>
+        <div id="hud-wave">WAVE 1</div>
+        <div id="hud-lives"></div>
+        <div id="hud-powerup" class="hidden"></div>
+    </div>
+
+    <div id="crosshair">
+        <div class="crosshair-h"></div>
+        <div class="crosshair-v"></div>
+    </div>
+
+    <div id="ui-overlay">
+        <div id="menu-screen">
+            <div class="panel aliens-menu-panel">
+                <h1 class="aliens-title">SPACE INVADERS</h1>
+                <p class="aliens-subtitle">VOXEL EDITION</p>
+                <div id="menu-highscore" class="aliens-highscore"></div>
+                <button id="start-btn" class="btn btn-primary aliens-start-btn">CLICK TO START</button>
+            </div>
+        </div>
+        <div id="game-over-screen" class="hidden">
+            <div class="panel aliens-menu-panel">
+                <h1 class="aliens-gameover-title">GAME OVER</h1>
+                <div id="final-score" class="aliens-final-score"></div>
+                <div id="new-highscore" class="aliens-new-highscore hidden">NEW HIGH SCORE!</div>
+                <button id="restart-btn" class="btn btn-primary aliens-start-btn">PLAY AGAIN</button>
+            </div>
+        </div>
+        <div id="pause-screen" class="hidden">
+            <div class="panel aliens-menu-panel">
+                <h1 class="aliens-title">PAUSED</h1>
+                <button id="resume-btn" class="btn btn-primary aliens-start-btn">RESUME</button>
+                <button id="quit-btn" class="btn aliens-start-btn">QUIT TO MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script type="module" src="js/aliens-app.js"></script>
+</body>
+</html>

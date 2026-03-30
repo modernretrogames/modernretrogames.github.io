@@ -1,0 +1,13 @@
+{
+  "name": "voxels",
+  "version": "1.0.0",
+  "description": "A 3D voxel-based artillery game built with Three.js. Destroy terrain and defeat AI opponents in turn-based tank combat on procedurally generated landscapes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
