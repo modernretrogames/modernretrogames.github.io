@@ -769,3 +769,220 @@ label {
     background: rgba(255, 136, 68, 0.1);
     box-shadow: 0 0 12px rgba(255, 136, 68, 0.3);
 }
+
+/* --- Landing (index.html): match aliens / missile menu aesthetics --- */
+
+body.arcade-body {
+    font-family: 'Courier New', Courier, monospace;
+    background: #050508;
+    color: #e6edf3;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    height: auto;
+}
+
+.arcade-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 85% 55% at 50% -15%, rgba(0, 255, 170, 0.09), transparent 52%),
+        radial-gradient(ellipse 75% 45% at 110% 85%, rgba(255, 68, 68, 0.07), transparent 48%),
+        radial-gradient(ellipse 65% 40% at -10% 90%, rgba(0, 204, 255, 0.06), transparent 42%),
+        #050508;
+}
+
+.arcade-container {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 24px 64px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.arcade-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.arcade-logo {
+    font-size: clamp(32px, 8vw, 48px);
+    font-weight: 700;
+    color: #00ffaa;
+    text-shadow: 0 0 20px rgba(0, 255, 170, 0.6), 0 0 40px rgba(0, 255, 170, 0.3);
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+.arcade-logo-accent {
+    color: #ff4444;
+    text-shadow: 0 0 20px rgba(255, 68, 68, 0.6), 0 0 40px rgba(255, 68, 68, 0.3);
+}
+
+.arcade-tagline {
+    font-size: 14px;
+    color: #00ccff;
+    text-shadow: 0 0 10px rgba(0, 204, 255, 0.4);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+}
+
+.arcade-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    flex: 1;
+    align-content: start;
+}
+
+.arcade-card {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    background: rgba(6, 4, 18, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.arcade-card:hover {
+    transform: translateY(-4px);
+}
+
+.arcade-card--aliens {
+    background: rgba(2, 0, 16, 0.92);
+    border: 1px solid rgba(0, 255, 170, 0.2);
+}
+
+.arcade-card--aliens:hover {
+    border-color: rgba(0, 255, 170, 0.45);
+    box-shadow: 0 0 28px rgba(0, 255, 170, 0.12), 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+
+.arcade-card--missile {
+    background: rgba(8, 2, 2, 0.94);
+    border: 1px solid rgba(255, 68, 68, 0.2);
+}
+
+.arcade-card--missile:hover {
+    border-color: rgba(255, 68, 68, 0.45);
+    box-shadow: 0 0 28px rgba(255, 68, 68, 0.1), 0 8px 32px rgba(0, 0, 0, 0.55);
+}
+
+.arcade-card-glow {
+    position: absolute;
+    inset: -40%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.arcade-card--aliens .arcade-card-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(0, 255, 170, 0.14), transparent 55%);
+}
+
+.arcade-card--missile .arcade-card-glow {
+    background: radial-gradient(circle at 50% 0%, rgba(255, 68, 68, 0.14), transparent 55%);
+}
+
+.arcade-card:hover .arcade-card-glow {
+    opacity: 1;
+}
+
+.arcade-card-content {
+    position: relative;
+    z-index: 1;
+    padding: 32px 28px;
+    backdrop-filter: blur(8px);
+}
+
+.arcade-card-icon {
+    font-size: 40px;
+    line-height: 1;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.12));
+}
+
+.arcade-card--aliens .arcade-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00ffaa;
+    text-shadow: 0 0 12px rgba(0, 255, 170, 0.5);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.arcade-card--missile .arcade-card-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ff4444;
+    text-shadow: 0 0 12px rgba(255, 68, 68, 0.5);
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.arcade-card-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.arcade-card--aliens .arcade-card-play {
+    font-size: 16px;
+    font-weight: 700;
+    color: #00ccff;
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.4);
+    letter-spacing: 2px;
+}
+
+.arcade-card--missile .arcade-card-play {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff8844;
+    text-shadow: 0 0 8px rgba(255, 136, 68, 0.4);
+    letter-spacing: 2px;
+}
+
+.arcade-footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.arcade-footer-text {
+    font-size: 14px;
+    color: #666;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.arcade-donate-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #fff;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.arcade-donate-btn:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: #fff;
+}
